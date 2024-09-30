@@ -14,15 +14,14 @@ return new class extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->string('codigo', 100);
             $table->string('nombres', 100);
             $table->string('apellidos', 100);
             $table->date('fecha_nacimiento');
             $table->string('dni', 8);
             $table->string('direccion', 100);
             $table->string('telefono', 15);
-            $table->char('nivel', 1);
-            $table->char('grado', 1);
-            $table->char('seccion', 1);
+            $table->foreignId('grade_id')->constrained();
             $table->timestamps();
         });
     }

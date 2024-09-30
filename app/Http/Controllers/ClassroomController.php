@@ -9,6 +9,6 @@ class ClassroomController extends Controller
 {
     public function index(){
         $classrooms = Classroom::all();
-        return view('classroom.index', compact('classrooms'));
+        return view('project.classroom.index', compact('classrooms'));
     }
 }

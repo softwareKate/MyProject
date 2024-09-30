@@ -13,11 +13,8 @@ return new class extends Migration
     {
         Schema::create('grades', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_classroom')->constrained('classrooms')->onDelete('cascade');
-            $table->foreignId('id_student')->constrained('students')->onDelete('cascade');
-            $table->decimal('grade', 5, 2);
-            $table->string('evaluation_type', 50); // Tipo de evaluación (examen, proyecto, etc.)
-            $table->date('date'); // Fecha de la evaluación
+            $table->string('nombre',20);
+            $table->char('nivel',1);
             $table->timestamps();
         });
     }
